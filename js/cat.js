@@ -1,17 +1,19 @@
 
 (function(){
     let elements = document.querySelectorAll(".cat");
-    let count = 0;
+    let texts = document.querySelectorAll(".times")
     for (let i = 0; i < elements.length ; i++){
-        elements[i].addEventListener('click',counter());
+        console.log(elements[i]);
+        elements[i].addEventListener('click',counter(i));
     }
 
-    function counter(){
-            
+    function counter(i){
+        let count = 0;   
             return function(){
                 count++;
-                console.log(count);
+                texts[i].innerHTML = count;
             }
+        
         };
 
 })();
